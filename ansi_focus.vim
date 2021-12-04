@@ -8,18 +8,19 @@
 " ANSI colours plus their 'bright' versions.
 " 
 " (I also use 
-" let g:airline_section_warning = ""
+"   let g:airline_section_warning = ""
 " to hide the hugely 'real estate'-hogging area)
-" 
-" The setups by Mode, noting that although there are only four here, plus
-" Inactive, the many other Vim modes all fall under these, so, e.g., Select
+"
+" The setups by Mode, noting that although there are only six here, 
+" the many other Vim modes all fall under these, so, e.g., Select
 " mode has the same colour scheme as Visual. Another example is the 
 " temporary -- (insert) -- mode, which enables one Normal command to be
 " entered when in Insert mode by using <C-o> when in Insert mode: it 
 " dislays like Insert mode. And yet another is 'r' mode, which appears 
 " when doing a 'gc' global confirm search/replace: its colours are as for
-" Command mode, i.e., which is also like Normal mode.
-"
+" Command mode (provided the airline.vim file's airline#check_mode 
+" function is set to handle all possible modes correctly.
+
 "          GUI                                   Terminal
 " Normal:  Mode[ Black with Bright White text    Black with Bright White text   
 "          Rest[ Black with Bright White text    Bright White with Black text    
@@ -33,7 +34,10 @@
 " Visual:  Mode[ 'White' with Black text         'White' with Black text   
 "          Rest[ Grey with Black text            Grey with Black text  
 
-" Inactive: All[ 'White' with Grey text         'White' with Black text   
+" Inactive: All[ 'White' with Grey text          'White' with Black text   
+
+" Command : Mode[ Black with Bright Green text   Black with Green text   
+"    line   Rest[ Black with Bright Green text   Green with Black text    
 
 let g:airline_left_sep='◤'
 
@@ -127,8 +131,13 @@ let t:V1   = [ t:gBlack, t:gWhite, t:tBlack, t:tWhite ]
 let t:V2   = [ t:gBlack, t:gGrey, t:tBlack, t:tGrey ]
 let t:V3   = [ t:gBlack, t:gGrey, t:tBlack, t:tGrey ]
 let g:airline#themes#ansi_focus#palette.visual = airline#themes#generate_color_map(t:V1, t:V2, t:V3)
-" || Inactive || (for split panes, etc.)
+" || inactive || (for split panes, etc.)
 let t:X1   = [ t:gWhite, t:gGrey, t:tWhite, t:tGrey ]
 let t:X2   = [ t:gWhite, t:gGrey, t:tWhite, t:tGrey ]
 let t:X3   = [ t:gWhite, t:gGrey, t:tWhite, t:tGrey ]
 let g:airline#themes#ansi_focus#palette.inactive = airline#themes#generate_color_map(t:X1, t:X2, t:X3)
+" || command ||
+let t:C1   = [ t:gBrightGreen, t:gBlack, t:tGreen, t:tBlack ]
+let t:C2   = [ t:gBrightGreen, t:gBlack, t:tBlack, t:tGreen ]
+let t:C3   = [ t:gBrightGreen, t:gBlack, t:tBlack, t:tGreen ]
+let g:airline#themes#ansi_focus#palette.commandline = airline#themes#generate_color_map(t:C1, t:C2, t:C3)
