@@ -6,7 +6,7 @@ A vim vim-airline theme aimed at making it more obvious when you are in Normal m
 ![Insert](png/insert.png)
 ![Replace](png/replace.png)
 ![Visual](png/visual.png)
-![Cmdline](png/cmdline.png))
+![Cmdline](png/cmdline.png)
 ![Inactive](png/inactive.png)
 
 ## Installation
@@ -16,12 +16,26 @@ A vim vim-airline theme aimed at making it more obvious when you are in Normal m
 - [Optional] Also add `let g:airline_section_warning=""` 
 
 ## Miscellaneous observations about modes
-One of this vim-airline theme's aims is to visually assist with determining the mode you are in. I find that it is really easy to type text/commands thinking you are in one mode when in another. This colour scheme assists in that Normal is Black/White and the Insert/Replace modes are vivid Blue/Magenta colours. To keep it really simple, the colours used are the SYSTEM colours / eight ANSI colours plus their 'bright' versions.(I also use `let g:airline_section_warning = ""` to hide the hugely "real estate"-hogging area.)
+One of this vim-airline theme's aims is to assist visually with reminding of the mode you are in. I find that it is really easy to type text/commands thinking you are in one mode when in another. This colour scheme assists in that Normal is Black/White and the Insert/Replace modes are vivid Blue/Magenta colours. To keep it really simple, the colours used are the SYSTEM colours / eight ANSI colours plus their 'bright' versions. (I also use `let g:airline_section_warning = ""` to hide the hugely "real estate"-hogging area, which, for me, detracts more than it assists.)
 
-The colour groups reflect Vim's BASIC modes, refer `:help vim-modes` and `:help mode()`. The ADDITIONAL modes generally display as expected provided airline itself (`airline#check_mode`) is correct and: a) Vim itesle sends the mode code, which is not always the case, and b) Vim has not had more modes added (which is noted as a possibility in the future the help files). 
+The colour groups reflect Vim's BASIC modes, refer `:help vim-modes` and `:help mode()`. The ADDITIONAL modes generally display as expected provided airline itself (`airline#check_mode`) is correct and: a) Vim itself sends the mode code, which is not always the case (operator-pending modes the prime examples), and b) Vim has not had more modes added (which is noted as a possibility in the future the help files). 
 
 ### BASIC modes (*plus* Replace mode)
 These are outlined in the table below.
+
+| BASIC mode | Area | GUI                            | Terminal                       |
+|------------|:----:|--------------------------------|--------------------------------|
+| Normal     | Mode | Black with Bright White text   | Black with Bright White text   |
+|            | Rest | Black with Bright White text   | Bright White with Black text   |
+| Insert     | Mode | Blue with Bright White text    | Blue with Bright White text    |
+|            | Rest | Bright Cyan with Blue text     | Bright Cyan with Blue text     |
+| Replace    | Mode | Magenta with Bright White text | Magenta with Bright White text |
+|            | Rest | BrightMagenta with Black text  | BrightMagenta with Black text  |
+| Visual     | Mode | 'White' with Black text        | 'White' with Black text        |
+|            | Rest | Grey with Black text           | Grey with Black text           |
+| Cmdline    | Mode | Black with Bright Green text   | Black with Green text          |
+|            | Rest | Black with Bright Green text   | Green with Black text          |
+| Inactive   | All  | 'White' with Grey text         | 'White' with Black text        |
 
 ### ADDITIONAL modes 
 
