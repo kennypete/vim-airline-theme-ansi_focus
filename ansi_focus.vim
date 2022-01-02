@@ -1,26 +1,5 @@
 " ansi_focus vim-airline template by kennypete (http://github.com/kennypete)
 "
-" This vim-airline template aims to visually assist with determining
-" the mode you are in. I find that it is really easy to type text/commands
-" thinking you are in one mode when in another. This colour scheme assists in
-" that Normal is Black/White and the Insert/Replace modes are mixed, vivid colours.
-" To keep it really simple, the colours used are the SYSTEM colours / eight 
-" ANSI colours plus their 'bright' versions.
-" 
-" (I also use 
-"   let g:airline_section_warning = ""
-" to hide the hugely 'real estate'-hogging area)
-"
-" The setups by Mode, noting that although there are only six here, 
-" the many other Vim modes all fall under these, so, e.g., Select
-" mode has the same colour scheme as Visual. Another example is the 
-" temporary -- (insert) -- mode, which enables one Normal command to be
-" entered when in Insert mode by using <C-o> when in Insert mode: it 
-" dislays like Insert mode. And yet another is 'r' mode, which appears 
-" when doing a 'gc' global confirm search/replace: its colours are as for
-" Command mode (provided the airline.vim file's airline#check_mode 
-" function is set to handle all possible modes correctly.
-
 "          GUI                                   Terminal
 " Normal:  Mode[ Black with Bright White text    Black with Bright White text   
 "          Rest[ Black with Bright White text    Bright White with Black text    
@@ -37,7 +16,7 @@
 " Inactive: All[ 'White' with Grey text          'White' with Black text   
 
 " Command : Mode[ Black with Bright Green text   Black with Green text   
-"    line   Rest[ Black with Bright Green text   Green with Black text    
+"   -line   Rest[ Black with Bright Green text   Green with Black text    
 
 let g:airline_left_sep='◤'
 
